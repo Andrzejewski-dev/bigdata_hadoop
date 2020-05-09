@@ -1,4 +1,4 @@
-wget https://github.com/Andrzejewski-dev/bigdata_hadoop/blob/master/passengerperarea.jar
+wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/blob/master/passengerperarea.jar
 
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv
