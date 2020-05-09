@@ -15,17 +15,17 @@ hadoop fs -mkdir -p project/output1
 wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/passengerperarea.jar -P project/passengerperarea.jar
 
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-03.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-04.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-05.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-07.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-08.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-09.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-10.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-11.csv -P project/tripdata/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-12.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv -P project/tripdata/yellow_tripdata_2019-02.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-03.csv -P project/tripdata/yellow_tripdata_2019-03.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-04.csv -P project/tripdata/yellow_tripdata_2019-04.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-05.csv -P project/tripdata/yellow_tripdata_2019-05.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv -P project/tripdata/yellow_tripdata_2019-06.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-07.csv -P project/tripdata/yellow_tripdata_2019-07.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-08.csv -P project/tripdata/yellow_tripdata_2019-08.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-09.csv -P project/tripdata/yellow_tripdata_2019-09.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-10.csv -P project/tripdata/yellow_tripdata_2019-10.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-11.csv -P project/tripdata/yellow_tripdata_2019-11.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-12.csv -P project/tripdata/yellow_tripdata_2019-12.csv
 wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -P project/taxi_zone_lookup.csv
 
 
