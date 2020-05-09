@@ -1,60 +1,50 @@
 #!/bin/bash
 
-wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/passengerperarea.jar
+mkdir project
+hadoop fs -mkdir -p project
 
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-03.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-04.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-05.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-07.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-08.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-09.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-10.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-11.csv
-wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-12.csv
-wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
+mkdir project/tripdata
+mkdir project/output1
 
-mkdir tripdata
-mkdir output1
+hadoop fs -mkdir -p project/tripdata
+hadoop fs -mkdir -p project/output1
 
-hadoop fs -mkdir -p tripdata
-hadoop fs -mkdir -p output1
+wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/passengerperarea.jar project/passengerperarea.jar
 
-mv yellow_tripdata_2019-01.csv tripdata/
-mv yellow_tripdata_2019-02.csv tripdata/
-mv yellow_tripdata_2019-03.csv tripdata/
-mv yellow_tripdata_2019-04.csv tripdata/
-mv yellow_tripdata_2019-05.csv tripdata/
-mv yellow_tripdata_2019-06.csv tripdata/
-mv yellow_tripdata_2019-07.csv tripdata/
-mv yellow_tripdata_2019-08.csv tripdata/
-mv yellow_tripdata_2019-09.csv tripdata/
-mv yellow_tripdata_2019-10.csv tripdata/
-mv yellow_tripdata_2019-11.csv tripdata/
-mv yellow_tripdata_2019-12.csv tripdata/
-mv taxi+_zone_lookup.csv taxi_zone_lookup.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-03.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-04.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-05.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-06.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-07.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-08.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-09.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-10.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-11.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-12.csv -P project/tripdata/yellow_tripdata_2019-01.csv
+wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -P project/taxi_zone_lookup.csv
 
-hadoop fs -copyFromLocal passengerperarea.jar passengerperarea.jar
-hadoop fs -copyFromLocal taxi_zone_lookup.csv taxi_zone_lookup.csv
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-01.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-02.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-03.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-04.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-05.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-06.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-07.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-08.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-09.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-10.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-11.csv tripdata/
-hadoop fs -copyFromLocal tripdata/yellow_tripdata_2019-12.csv tripdata/
 
-hadoop jar passengerperarea.jar PassengerPerArea tripdata/*.csv output1
+hadoop fs -copyFromLocal project/passengerperarea.jar project/passengerperarea.jar
+hadoop fs -copyFromLocal project/taxi_zone_lookup.csv project/taxi_zone_lookup.csv
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-01.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-02.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-03.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-04.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-05.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-06.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-07.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-08.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-09.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-10.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-11.csv project/tripdata/
+hadoop fs -copyFromLocal project/tripdata/tripdata/yellow_tripdata_2019-12.csv project/tripdata/
 
-hadoop fs -copyToLocal output1/part-r-00000 output1/
-hadoop fs -copyToLocal output1/part-r-00001 output1/
-hadoop fs -copyToLocal output1/part-r-00002 output1/
-hadoop fs -copyToLocal output1/part-r-00003 output1/
-hadoop fs -copyToLocal output1/part-r-00004 output1/
+hadoop jar project/passengerperarea.jar PassengerPerArea project/tripdata/*.csv project/output1
+
+hadoop fs -copyToLocal project/output1/part-r-00000 project/output1/
+hadoop fs -copyToLocal project/output1/part-r-00001 project/output1/
+hadoop fs -copyToLocal project/output1/part-r-00002 project/output1/
+hadoop fs -copyToLocal project/output1/part-r-00003 project/output1/
+hadoop fs -copyToLocal project/output1/part-r-00004 project/output1/
