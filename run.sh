@@ -19,8 +19,8 @@ wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
 mkdir tripdata
 mkdir output1
 
-hadoop fs -mkdir tripdata
-hadoop fs -mkdir output1
+hadoop fs -mkdir -p tripdata
+hadoop fs -mkdir -p output1
 
 mv yellow_tripdata_2019-01.csv tripdata/
 mv yellow_tripdata_2019-02.csv tripdata/
