@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf project
-hadoop fs -rm -rf project
+hadoop fs -rm -r project
 
 mkdir project
 hadoop fs -mkdir -p project
