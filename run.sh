@@ -10,6 +10,7 @@ mkdir project/tripdata
 hadoop fs -mkdir -p project/tripdata
 
 mkdir project/output1
+mkdir project/output2
 
 wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/passengerperarea.jar -P project/
 wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/pig.pig -P project/
@@ -30,6 +31,7 @@ wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -O project/taxi
 
 
 hadoop fs -copyFromLocal project/passengerperarea.jar project/passengerperarea.jar
+hadoop fs -copyFromLocal project/pig.pig project/pig.pig
 hadoop fs -copyFromLocal project/taxi_zone_lookup.csv project/taxi_zone_lookup.csv
 hadoop fs -copyFromLocal project/tripdata/yellow_tripdata_2019-01.csv project/tripdata/
 hadoop fs -copyFromLocal project/tripdata/yellow_tripdata_2019-02.csv project/tripdata/
@@ -51,3 +53,11 @@ hadoop fs -copyToLocal project/output1/part-r-00001 project/output1/
 hadoop fs -copyToLocal project/output1/part-r-00002 project/output1/
 hadoop fs -copyToLocal project/output1/part-r-00003 project/output1/
 hadoop fs -copyToLocal project/output1/part-r-00004 project/output1/
+
+pig -f project/pig.pig
+
+hadoop fs -copyToLocal project/output2/part-r-00000 project/output2/
+
+cp project/output2/part-r-00000 wynik.json
+
+nano wynik.json

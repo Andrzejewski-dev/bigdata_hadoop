@@ -19,5 +19,5 @@ final_result = FOREACH month_borough_passenger_grouped_month {
 }
 
 STORE final_result
-    INTO 'project/output2.json'
+    INTO 'project/output2'
     USING JsonStorage();
