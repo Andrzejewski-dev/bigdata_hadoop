@@ -16,9 +16,9 @@ final_result = FOREACH month_borough_passenger_grouped_month {
  only_three = LIMIT sorted 3;
  
  GENERATE flatten(only_three);
-}
+};
 
-final_result_json = final_result as (month: chararray, borough: chararray, passengers:int);
+final_result_json = FOREACH final_result GENERATE $0 as month, $1 as borough, $2 as passengers;
 
 STORE final_result_json
     INTO 'project/output2'
