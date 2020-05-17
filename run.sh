@@ -26,7 +26,7 @@ wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-09.csv -P p
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-10.csv -P project/tripdata/
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-11.csv -P project/tripdata/
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-12.csv -P project/tripdata/
-wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -P project/
+wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -P project/taxi_zone_lookup.csv
 
 
 hadoop fs -copyFromLocal project/passengerperarea.jar project/passengerperarea.jar
@@ -44,7 +44,7 @@ hadoop fs -copyFromLocal project/tripdata/yellow_tripdata_2019-10.csv project/tr
 hadoop fs -copyFromLocal project/tripdata/yellow_tripdata_2019-11.csv project/tripdata/
 hadoop fs -copyFromLocal project/tripdata/yellow_tripdata_2019-12.csv project/tripdata/
 
-hadoop jar project/passengerperarea.jar PassengerPerArea project/tripdata/*.csv project/output1
+hadoop jar project/passengerperarea.jar PassengerPerArea "project/tripdata/*.csv" "project/output1"
 
 hadoop fs -copyToLocal project/output1/part-r-00000 project/output1/
 hadoop fs -copyToLocal project/output1/part-r-00001 project/output1/
