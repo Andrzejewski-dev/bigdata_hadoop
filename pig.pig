@@ -1,5 +1,5 @@
-zones = LOAD 'taxi_zone_lookup.csv' USING PigStorage(',');
-output1 = LOAD 'output1/part-r-*' USING PigStorage('\t');
+zones = LOAD 'project/taxi_zone_lookup.csv' USING PigStorage(',');
+output1 = LOAD 'project/output1/part-r-*' USING PigStorage('\t');
 
 output1_with_zone = JOIN output1 BY $1, zones BY $0;
 

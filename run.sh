@@ -12,6 +12,7 @@ hadoop fs -mkdir -p project/tripdata
 mkdir project/output1
 
 wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/passengerperarea.jar -P project/
+wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/pig.pig -P project/
 
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-01.csv -P project/tripdata/
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-02.csv -P project/tripdata/
