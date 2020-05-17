@@ -10,7 +10,6 @@ mkdir project/tripdata
 hadoop fs -mkdir -p project/tripdata
 
 mkdir project/output1
-hadoop fs -mkdir -p project/output1
 
 wget https://raw.githubusercontent.com/Andrzejewski-dev/bigdata_hadoop/master/passengerperarea.jar -P project/
 
