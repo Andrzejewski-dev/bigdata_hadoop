@@ -18,6 +18,8 @@ final_result = FOREACH month_borough_passenger_grouped_month {
  GENERATE flatten(only_three);
 }
 
-STORE final_result
+final_result_json = final_result as (month: chararray, borough: chararray, passengers:int);
+
+STORE final_result_json
     INTO 'project/output2'
     USING JsonStorage();
