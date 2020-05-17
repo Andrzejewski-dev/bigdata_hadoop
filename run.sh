@@ -25,7 +25,7 @@ wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-09.csv -P p
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-10.csv -P project/tripdata/
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-11.csv -P project/tripdata/
 wget https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2019-12.csv -P project/tripdata/
-wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -P project/taxi_zone_lookup.csv
+wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv -O project/taxi_zone_lookup.csv
 
 
 hadoop fs -copyFromLocal project/passengerperarea.jar project/passengerperarea.jar
